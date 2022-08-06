@@ -23,35 +23,49 @@ class AnimationViewController: UIViewController {
         springAnimationView.layer.cornerRadius = 15
         animationButton.layer.cornerRadius = 10
         
+        setupAnimation()
+        
     }
-
     
     
-
+    
+    
     @IBAction func animationButtonPresed() {
+        if animationButton.currentTitle == "Run" {
+            springAnimationView.animate()
+            animationButton.setTitle("Run next", for: .normal)
+        } else {
+            setupAnimation()
+            springAnimationView.animate()
+            
+            
+        }
         
+    }
+    
+}
+extension AnimationViewController {
+    
+    func setupAnimation() {
         let randomAnimation = animations.randomElement()
-        
         guard let preset = randomAnimation?.preset else { return }
         guard let curve = randomAnimation?.curve else { return }
         guard let force = randomAnimation?.force else { return }
         guard let delay = randomAnimation?.delay else { return }
         guard let duration = randomAnimation?.duration else { return }
+       
         springAnimationView.animation = preset
         springAnimationView.delay = delay
         springAnimationView.force = force
         springAnimationView.duration = duration
         springAnimationView.curve = curve
+        
         animationLabel.text = """
-        preset: \(preset)
-        curve: \(curve)
-        force: \(String(format: "%.2F", force))
-        delay: \(String(format: "%.2F", delay))
-        duration: \(String(format: "%.2F", duration))
-        """
-        springAnimationView.animate()
-        }
-       
+    preset: \(preset)
+    curve: \(curve)
+    force: \(String(format: "%.2F", force))
+    delay: \(String(format: "%.2F", delay))
+    duration: \(String(format: "%.2F", duration))
+    """
     }
-
-
+}
