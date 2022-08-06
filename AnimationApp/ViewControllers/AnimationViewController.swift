@@ -21,7 +21,7 @@ class AnimationViewController: UIViewController {
         super.viewDidLoad()
         
         springAnimationView.layer.cornerRadius = 15
-        animationButton.layer.cornerRadius = 15
+        animationButton.layer.cornerRadius = 10
         
     }
 
