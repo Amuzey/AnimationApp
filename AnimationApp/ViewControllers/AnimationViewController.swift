@@ -14,58 +14,54 @@ class AnimationViewController: UIViewController {
     @IBOutlet var animationButton: UIButton!
     @IBOutlet var animationLabel: UILabel!
     
-    private let animations = Animation.getAnimation()
+    private var animation = Animation.getAnimation()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        springAnimationView.layer.cornerRadius = 15
+        springAnimationView.layer.cornerRadius = 10
         animationButton.layer.cornerRadius = 10
+        setupAnimationLabel(animation)
         
-        setupAnimation()
+        
         
     }
-    
-    
-    
     
     @IBAction func animationButtonPresed() {
-        if animationButton.currentTitle == "Run" {
-            springAnimationView.animate()
-            animationButton.setTitle("Run next", for: .normal)
-        } else {
-            setupAnimation()
-            springAnimationView.animate()
-            
-            
-        }
+        setupAnimation(animation)
+        setupAnimationLabel(animation)
+        animation = Animation.getAnimation()
+        animationButton.setTitle("Run \(animation.preset)", for: .normal)
+        springAnimationView.animate()
         
     }
     
-}
-extension AnimationViewController {
-    
-    func setupAnimation() {
-        let randomAnimation = animations.randomElement()
-        guard let preset = randomAnimation?.preset else { return }
-        guard let curve = randomAnimation?.curve else { return }
-        guard let force = randomAnimation?.force else { return }
-        guard let delay = randomAnimation?.delay else { return }
-        guard let duration = randomAnimation?.duration else { return }
-       
-        springAnimationView.animation = preset
-        springAnimationView.delay = delay
-        springAnimationView.force = force
-        springAnimationView.duration = duration
-        springAnimationView.curve = curve
-        
+    private func setupAnimationLabel(_ animation: Animation) {
         animationLabel.text = """
-    preset: \(preset)
-    curve: \(curve)
-    force: \(String(format: "%.2F", force))
-    delay: \(String(format: "%.2F", delay))
-    duration: \(String(format: "%.2F", duration))
-    """
+                preset: \(animation.preset)
+                curve: \(animation.curve)
+                force: \(String(format: "%.2F", animation.force))
+                delay: \(String(format: "%.2F", animation.delay))
+                duration: \(String(format: "%.2F", animation.duration))
+                """
+    }
+    private func setupAnimation(_ animation: Animation) {
+
+        springAnimationView.animation = animation.preset
+        springAnimationView.curve = animation.curve
+        springAnimationView.force = animation.force
+        springAnimationView.delay = animation.delay
+        springAnimationView.duration = animation.duration
     }
 }
+
+
+
+
+
+  
+
+
+
+
