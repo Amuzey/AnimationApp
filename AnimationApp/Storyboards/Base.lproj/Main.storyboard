@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZz-wQ-Fem" customClass="SpringButton" customModule="SpringAnimation">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZz-wQ-Fem">
                                 <rect key="frame" x="130" y="732" width="154" height="30"/>
                                 <color key="backgroundColor" red="0.12267441302537918" green="0.94044452905654907" blue="0.74976325035095215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -24,14 +24,26 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="springButtonPresed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="saV-Q1-V9Y"/>
+                                    <action selector="animationButtonPresed" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhU-z0-kBE"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIv-ul-HNi" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="51" y="105" width="312" height="177"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1N-uC-xda">
+                                        <rect key="frame" x="15" y="15" width="282" height="147"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.12267441302537918" green="0.94044452905654907" blue="0.74976325035095215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="f1N-uC-xda" firstAttribute="leading" secondItem="dIv-ul-HNi" secondAttribute="leading" constant="15" id="MDv-3b-B07"/>
                                     <constraint firstAttribute="height" constant="177" id="Sue-pI-mY2"/>
+                                    <constraint firstItem="f1N-uC-xda" firstAttribute="top" secondItem="dIv-ul-HNi" secondAttribute="top" constant="15" id="ZLO-Q2-1XB"/>
+                                    <constraint firstAttribute="bottom" secondItem="f1N-uC-xda" secondAttribute="bottom" constant="15" id="axt-uc-bhX"/>
+                                    <constraint firstAttribute="trailing" secondItem="f1N-uC-xda" secondAttribute="trailing" constant="15" id="g75-eY-jeT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -46,7 +58,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="springAnimationButton" destination="XZz-wQ-Fem" id="d4I-rA-auQ"/>
+                        <outlet property="animationButton" destination="XZz-wQ-Fem" id="C8c-vn-Lb1"/>
+                        <outlet property="animationLabel" destination="f1N-uC-xda" id="b2z-Nv-A5j"/>
                         <outlet property="springAnimationView" destination="dIv-ul-HNi" id="kKK-X1-wM4"/>
                     </connections>
                 </viewController>

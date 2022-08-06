@@ -14,6 +14,8 @@
 		8A1F00B9289BB6A800F94B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F00B8289BB6A800F94B04 /* Assets.xcassets */; };
 		8A1F00BC289BB6A800F94B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1F00BA289BB6A800F94B04 /* LaunchScreen.storyboard */; };
 		8A1F00C9289BC01600F94B04 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1F00C8289BC01600F94B04 /* SpringAnimation */; };
+		8A1F00CF289D636C00F94B04 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F00CE289D636C00F94B04 /* Animation.swift */; };
+		8A1F00D1289E1D7000F94B04 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F00D0289E1D7000F94B04 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		8A1F00B8289BB6A800F94B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A1F00BB289BB6A800F94B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A1F00BD289BB6A800F94B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A1F00CE289D636C00F94B04 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		8A1F00D0289E1D7000F94B04 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				8A1F00B3289BB6A600F94B04 /* AnimationViewController.swift */,
+				8A1F00CE289D636C00F94B04 /* Animation.swift */,
+				8A1F00D0289E1D7000F94B04 /* DataStore.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +186,8 @@
 			files = (
 				8A1F00B4289BB6A600F94B04 /* AnimationViewController.swift in Sources */,
 				8A1F00B0289BB6A600F94B04 /* AppDelegate.swift in Sources */,
+				8A1F00CF289D636C00F94B04 /* Animation.swift in Sources */,
+				8A1F00D1289E1D7000F94B04 /* DataStore.swift in Sources */,
 				8A1F00B2289BB6A600F94B04 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
